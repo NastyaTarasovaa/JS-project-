@@ -11,16 +11,116 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
     <title>Document</title>
+    <style>
+        .header-container {
+            max-width: 1460;
+            display: flex;
+            flex-basis: 50px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            justify-items: center;
+            align-items: center;
+            color: orange;
+            margin-top: 10px;
+        }
+
+        .piggibank {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .piggibank-svg {
+            grid-area: 1/1/3/2;
+        }
+
+        .btn {
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            border: 2px solid #e74c3c;
+            border-radius: 0.6em;
+            color: #e74c3c;
+            cursor: pointer;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1;
+            margin: 20px;
+            padding: 1.2em 2.8em;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            color: rgb(23, 126, 189);
+            outline: 0;
+        }
+
+        .third {
+            border-color: #3498db;
+            color: #fff;
+            box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+            -webkit-transition: all 150ms ease-in-out;
+            transition: all 150ms ease-in-out;
+        }
+
+        .third:hover {
+            box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+        }
+
+        a {
+            color: orange;
+        }
+
+        .exchange-rates {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .exchange-rates-main {
+            grid-area: 1/1/4/2;
+            align-self: center;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="wrapper">
-        <header>
-            <div class="content-container">
-                <h2>Хедер</h2>
+
+        <header class="header-container">
+            <div class="header-items piggibank"><img class="piggibank-svg"
+                    src="./assets/images/piggy-bank-coin-svgrepo-com.svg" height=50px>
+                <div class="elem">Остаток:</div>
+                <div>+10 000</div>
             </div>
+            <a href="///" class="header-items">Финансовые заметки</a>
+            <div class="header-items exchange-rates">
+                <div class="exchange-rates-main">Курсы валют</div>
+                <div class="exchange-rates-item">USD <span id="USD"></span></div>
+                <div class="exchange-rates-item">EUR <span id="EUR"></span></div>
+                <div class="exchange-rates-item">CNY <span id="CNY"></span></div>
+            </div>
+            <button class="header-items btn third">Вход</button>
         </header>
+
+
 
         <main class="content">
             <div class="body">
@@ -29,6 +129,7 @@
                 </div>
             </div>
         </main>
+        <div id="test"></div>
 
         <footer class="footer">
             <div class="content-container">
@@ -38,6 +139,27 @@
             </div>
         </footer>
     </div>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function (event) {
+            getCourses();
+        });
+
+        function getCourses() {
+            fetch('https://cdn.cur.su/api/cbr.json')
+                .then(response => response.json())
+                .then(rates => {
+                    console.log(rates);
+                    document.getElementById('USD').innerHTML = (rates.rates.RUB).toFixed(3);
+                    document.getElementById('EUR').innerHTML = (rates.rates.RUB / rates.rates.EUR).toFixed(3);
+                    document.getElementById('CNY').innerHTML = (rates.rates.RUB / rates.rates.CNY).toFixed(3);
+                })
+                .catch(err => console.log(err));
+        }
+    </script>
 </body>
 
 </html>
