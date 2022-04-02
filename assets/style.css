@@ -2,6 +2,10 @@ body {
     font-family: 'Montserrat', Times, sans-serif;
 }
 
+a {
+    rgb(0, 17, 255);
+}
+
 .wrapper {
     min-height: 100vh;
     overflow: hidden;
@@ -17,3 +21,168 @@ body {
 .content {
     flex: 1 1 auto;
 }
+
+/*хэддер*/
+.header-container {
+    display: flex;
+    flex-basis: 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    color: rgb(0, 17, 255);
+    margin-top: 10px;
+    background-color: #c3d7ec;
+}
+
+.piggibank {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.piggibank-svg {
+    grid-area: 1/1/3/2;
+}
+
+/*начало кнопки в хэддере*/
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+    color: rgb(23, 126, 189);
+    outline: 0;
+}
+
+.third {
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+/*конец кнопки*/
+
+
+
+
+.exchange-rates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+
+}
+
+.exchange-rates-main {
+    grid-area: 1/1/4/2;
+    align-self: center;
+}
+
+/*конец хэддера*/
+
+/*начало карточек*/
+h1 {
+    text-align: center;
+    color: #4181ee;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 300px;
+    min-height: 250px;
+    background: rgb(52, 154, 218);
+    padding: 30px;
+    box-sizing: border-box;
+    color: #FFF;
+    margin: 20px;
+    box-shadow: 0px 2px 18px -4px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+
+.card-img {
+    width: 240px;
+}
+
+
+.card-title {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+
+.card-content {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.card-btn {
+    all: unset;
+    display: block;
+    margin-left: auto;
+    border: 2px solid #FFF;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 600;
+    transition: all 0.5s;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+}
+
+.card-btn:hover {
+    color: #02b875;
+    background: #FFF;
+}
+
+.card:nth-child(2) .card-btn:hover {
+    color: #4181ee;
+    background: #FFF;
+}
+
+.card:last-child .card-btn:hover {
+    color: #673ab7;
+    background: #FFF;
+}
+
+/*конец карточек*/

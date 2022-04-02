@@ -6,98 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/normalize.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <title>Document</title>
-    <style>
-        .header-container {
-            max-width: 1460;
-            display: flex;
-            flex-basis: 50px;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            justify-items: center;
-            align-items: center;
-            color: orange;
-            margin-top: 10px;
-        }
-
-        .piggibank {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .piggibank-svg {
-            grid-area: 1/1/3/2;
-        }
-
-        .btn {
-            box-sizing: border-box;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-color: transparent;
-            border: 2px solid #e74c3c;
-            border-radius: 0.6em;
-            color: #e74c3c;
-            cursor: pointer;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-align-self: center;
-            -ms-flex-item-align: center;
-            align-self: center;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1;
-            margin: 20px;
-            padding: 1.2em 2.8em;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-
-        .btn:hover,
-        .btn:focus {
-            color: rgb(23, 126, 189);
-            outline: 0;
-        }
-
-        .third {
-            border-color: #3498db;
-            color: #fff;
-            box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
-            -webkit-transition: all 150ms ease-in-out;
-            transition: all 150ms ease-in-out;
-        }
-
-        .third:hover {
-            box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
-        }
-
-        a {
-            color: orange;
-        }
-
-        .exchange-rates {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            gap: 10px;
-        }
-
-        .exchange-rates-main {
-            grid-area: 1/1/4/2;
-            align-self: center;
-        }
-    </style>
+    <title>Финансовые заметки</title>
 </head>
 
 <body>
@@ -125,7 +38,53 @@
         <main class="content">
             <div class="body">
                 <div class='content-container'>
-                    <h2>Финансовые советы</h2>
+                    <div class="container">
+                        <h1>Финансовые заметки</h1>
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <img class="card-img"
+                                    src="./assets/images/phone_9c23da35684ccffd2e5e7c491e605296f12b6bcd.png"
+                                    alt="монетки" />
+                                <h3 class="card-title">CARD TITLE</h3>
+                                <p class="card-content">Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literature from 45 BC, making it
+                                    over 2000 years old.</p>
+                                <button class="card-btn">READ MORE</button>
+                            </div>
+                            <div class="card">
+                                <img class="card-img"
+                                    src="./assets/images/phone_9c23da35684ccffd2e5e7c491e605296f12b6bcd.png"
+                                    alt="монетки" />
+                                <h3 class="card-title">CARD TITLE</h3>
+                                <p class="card-content">Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literature from 45 BC, making it
+                                    over 2000 years old.</p>
+                                <button class="card-btn">READ MORE</button>
+                            </div>
+                            <div class="card">
+                                <img class="card-img"
+                                    src="./assets/images/phone_9c23da35684ccffd2e5e7c491e605296f12b6bcd.png"
+                                    alt="монетки" />
+                                <h3 class="card-title">CARD TITLE</h3>
+                                <p class="card-content">Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literature from 45 BC, making it
+                                    over 2000 years old.</p>
+                                <button class="card-btn">READ MORE</button>
+                            </div>
+                            <div class="card">
+                                <img class="card-img"
+                                    src="./assets/images/phone_9c23da35684ccffd2e5e7c491e605296f12b6bcd.png"
+                                    alt="монетки" />
+                                <h3 class="card-title">CARD TITLE</h3>
+                                <p class="card-content">Contrary to popular belief, Lorem Ipsum is not simply random
+                                    text. It has roots in a piece of classical Latin literature from 45 BC, making it
+                                    over 2000 years old.</p>
+                                <button class="card-btn">READ MORE</button>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </main>
