@@ -13,8 +13,47 @@ body {
 .content-container {
     max-width: 1440px;
     margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .content {
     flex: 1 1 auto;
+}
+
+.content-container_main {
+
+    max-width: 1440px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+
+}
+
+.About {
+    width: 50%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+}
+
+.Picture {
+    width: 50%;
+}
+
+.Project-name {
+    font-style: bold;
+    padding-bottom: 1%;
+    margin-left: 35%;
+}
+
+.Button_try {
+    padding-top: 5%;
+    margin-left: 35%;
+}
+
+.Features {
+    margin-left: 35%;
 }
