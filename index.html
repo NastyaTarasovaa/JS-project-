@@ -31,30 +31,44 @@
                 <div>
                     <label for="name">Имя</label>
                     <input type="text" id="name">
+                    <div id="nameError"></div>
                 </div>
                 <div>
                     <label for="surname">Фамилия</label>
                     <input type="text" id="surname">
+                    <div id="surnameError"></div>
                 </div>
                 <div>
                     <label for="sex">Пол</label>
-                    <input type="text" id="sex">
+
+                    <div class="radioWrapper">
+                        <label for="male">Мужчина
+                            <input type="radio" id="male" name="sex" value="male" />
+                        </label>
+                        <label for="female">Женщина
+                            <input type="radio" id="female" name="sex" value="female" />
+                        </label>
+                    </div>
+                    <div id="sexError"></div>
+
                 </div>
                 <div>
                     <label for="age">Возраст</label>
                     <input type="text" id="age">
+                    <div id="ageError"></div>
                 </div>
                 <div>
                     <label for="email">E-mail</label>
                     <input type="email" id="email">
+                    <div id="emailError"></div>
                 </div>
                 <div>
                     <label for="country">Страна проживания</label>
                     <input type="text" id="country">
+                    <div id="countryError"></div>
                 </div>
                 <div>
-                    <button> Сохранить </button>
-
+                    <button type="button" onclick="checkValidation();"> Сохранить </button>
                 </div>
 
             </div>
@@ -69,6 +83,8 @@
             </div>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

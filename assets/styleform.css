@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+
 
 }
 
@@ -13,14 +13,13 @@ body {
     width: 500px;
     background: #63A1FF;
     border-radius: 20px;
-display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-   
 }
 
 .profile {
-    
+
     width: 240px;
     text-align: center;
     padding: 30px;
@@ -59,8 +58,23 @@ button {
     background: #C4C4C4;
     color: black;
     font-size: 14px;
-    font-weight:bolder;
+    font-weight: bolder;
     outline: none;
     text-transform: uppercase;
 }
 
+.radioWrapper {
+    margin-bottom: 10px;
+}
+
+.radioWrapper label {
+    display: inline;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.errorMessage {
+    font-size: 12px;
+    color: red;
+    margin: 5px;
+}
