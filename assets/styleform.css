@@ -37,7 +37,7 @@ input[type="email"] {
     width: 95%;
     padding: 10px 15px;
     border-width: 0;
-    border-radius: 10px;
+    border-radius: 4px;
     background: white;
     outline: none;
     margin: 0;
@@ -78,3 +78,5 @@ button {
     color: red;
     margin: 5px;
 }
+
+/*Adaptation*/
