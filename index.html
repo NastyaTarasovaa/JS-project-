@@ -24,8 +24,8 @@
         </header>
 
         <main class="form">
-            <div class="profile">
-                <div class='content-container'>
+            <div class="form__profile">
+                <div class="form__content-container">
                     <h2>Регистрация</h2>
                 </div>
                 <div>
@@ -38,20 +38,7 @@
                     <input type="text" id="surname">
                     <div id="surnameError"></div>
                 </div>
-                <div>
-                    <label for="sex">Пол</label>
 
-                    <div class="radioWrapper">
-                        <label for="male">Мужчина
-                            <input type="radio" id="male" name="sex" value="male" />
-                        </label>
-                        <label for="female">Женщина
-                            <input type="radio" id="female" name="sex" value="female" />
-                        </label>
-                    </div>
-                    <div id="sexError"></div>
-
-                </div>
                 <div>
                     <label for="age">Возраст</label>
                     <input type="text" id="age">
@@ -66,6 +53,20 @@
                     <label for="country">Страна проживания</label>
                     <input type="text" id="country">
                     <div id="countryError"></div>
+                </div>
+                <div>
+                    <label for="sex">Пол</label>
+
+                    <div class="radioWrapper">
+                        <label for="male">Мужчина
+                            <input type="radio" id="male" name="sex" value="male" />
+                        </label>
+                        <label for="female">Женщина
+                            <input type="radio" id="female" name="sex" value="female" />
+                        </label>
+                    </div>
+                    <div id="sexError"></div>
+
                 </div>
                 <div>
                     <button type="button" onclick="checkValidation();"> Сохранить </button>

@@ -15,7 +15,7 @@ function checkValidation() {
     } else {
         let isName = nameRegExp.test(name.value);
         if (isName === false) {
-            document.getElementById("nameError").innerHTML += "<span class='errorMessage'>Имя не может содержать цифры, символы и точки с запяти</span>";
+            document.getElementById("nameError").innerHTML += "<span class='errorMessage'>Имя не может содержать цифры, символы и точки с запятой</span>";
         }
     }
 
