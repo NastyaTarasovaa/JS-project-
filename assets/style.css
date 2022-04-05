@@ -3,7 +3,8 @@ body {
 }
 
 a {
-    color: #63A1FF;
+    color: #000000;
+    text-decoration: none;
 }
 
 .wrapper {
@@ -29,7 +30,7 @@ a {
     justify-content: space-around;
     justify-items: center;
     align-items: center;
-    color: #63A1FF;
+    color: #000000;
     margin-top: 10px;
 }
 
@@ -82,7 +83,7 @@ a {
 
 .third {
     border-color: #63A1FF;
-    color: #fff;
+    color: rgb(1, 1, 1);
     box-shadow: 0 0 40px 40px #63A1FF inset, 0 0 0 0 #63A1FF;
     -webkit-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
@@ -112,7 +113,7 @@ a {
 /*начало карточек*/
 .h1 {
     text-align: center;
-    color: #63A1FF;
+    color: #000000;
 }
 
 .card-wrapper {
@@ -181,3 +182,76 @@ a {
 }
 
 /*конец карточек*/
+
+/*начало адаптивки*/
+@media (min-width: 420px) and (max-width: 767px) {
+    #exchange-rates {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 420px) {
+
+    body {
+        font-size: 1em;
+    }
+
+    #exchange-rates {
+        display: none;
+    }
+
+    .piggibank {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+    }
+
+    #piggi {
+        display: none;
+    }
+
+    .card {
+        max-width: 90%;
+        min-height: 75px;
+        background: #63A1FF;
+        box-sizing: border-box;
+        color: rgb(0, 0, 0);
+        margin: 3px;
+        box-shadow: 0px 2px 18px -4px rgba(0, 0, 0, 0.75);
+        border-radius: 20px;
+    }
+
+    .card-img {
+        width: 100%;
+    }
+
+
+    .card-title {
+        margin-top: 0;
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    .card-content {
+        font-size: 1em;
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+    }
+
+    .card-btn {
+        all: unset;
+        display: block;
+        margin-left: auto;
+        border: 2px solid rgb(0, 0, 0);
+        padding: 5px 7px;
+        border-radius: 15px;
+        font-size: 10px;
+        font-weight: 600;
+        transition: all 0.5s;
+        cursor: pointer;
+        letter-spacing: 1.2px;
+    }
+}
