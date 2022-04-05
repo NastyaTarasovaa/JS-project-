@@ -3,7 +3,7 @@ body {
 }
 
 a {
-    color: rgb(0, 17, 255);
+    color: #63A1FF;
 }
 
 .wrapper {
@@ -25,14 +25,12 @@ a {
 /*хэддер*/
 .header-container {
     display: flex;
-    flex-basis: 50px;
     flex-wrap: wrap;
     justify-content: space-around;
     justify-items: center;
     align-items: center;
-    color: rgb(0, 17, 255);
+    color: #63A1FF;
     margin-top: 10px;
-    background-color: #c3d7ec;
 }
 
 .piggibank {
@@ -78,26 +76,23 @@ a {
 
 .btn:hover,
 .btn:focus {
-    color: rgb(23, 126, 189);
+    color: #63A1FF;
     outline: 0;
 }
 
 .third {
-    border-color: #3498db;
+    border-color: #63A1FF;
     color: #fff;
-    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    box-shadow: 0 0 40px 40px #63A1FF inset, 0 0 0 0 #63A1FF;
     -webkit-transition: all 150ms ease-in-out;
     transition: all 150ms ease-in-out;
 }
 
 .third:hover {
-    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+    box-shadow: 0 0 10px 0 #63A1FF inset, 0 0 10px 4px #63A1FF;
 }
 
 /*конец кнопки*/
-
-
-
 
 .exchange-rates {
     display: grid;
@@ -115,9 +110,9 @@ a {
 /*конец хэддера*/
 
 /*начало карточек*/
-h1 {
+.h1 {
     text-align: center;
-    color: #4181ee;
+    color: #63A1FF;
 }
 
 .card-wrapper {
@@ -129,10 +124,10 @@ h1 {
 .card {
     max-width: 300px;
     min-height: 250px;
-    background: rgb(52, 154, 218);
+    background: #63A1FF;
     padding: 30px;
     box-sizing: border-box;
-    color: #FFF;
+    color: rgb(0, 0, 0);
     margin: 20px;
     box-shadow: 0px 2px 18px -4px rgba(0, 0, 0, 0.75);
     border-radius: 20px;
@@ -160,7 +155,7 @@ h1 {
     all: unset;
     display: block;
     margin-left: auto;
-    border: 2px solid #FFF;
+    border: 2px solid rgb(0, 0, 0);
     padding: 10px 15px;
     border-radius: 25px;
     font-size: 10px;
