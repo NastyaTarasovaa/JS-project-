@@ -7,6 +7,7 @@ function checkValidation() {
     const nameRegExp = /^([а-яё]+|[a-z]+)$/;
     const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     const numberRegExp = /^\d+$/;
+    const passwordRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
     //name
     let name = document.getElementById("name");
@@ -26,7 +27,7 @@ function checkValidation() {
     } else {
         let isSurname = nameRegExp.test(surname.value);
         if (isSurname === false) {
-            document.getElementById("surnameError").innerHTML += "<span class='errorMessage'>Фамилия не может содержать цифры, символы и точки с запяти</span>";
+            document.getElementById("surnameError").innerHTML += "<span class='errorMessage'>Фамилия не может содержать цифры, символы и точки с запятой</span>";
         }
     }
 
@@ -63,6 +64,18 @@ function checkValidation() {
         }
     }
 
+    //password 
+
+    let password = document.getElementById("password");
+    if (password.value === "") {
+        document.getElementById("passwordError").innerHTML += "<span class='errorMessage'>Введите пароль</span>";
+    } else {
+        let isPassword = passwordRegExp.test(password.value);
+        if (isPassword === false) {
+            document.getElementById("passwordError").innerHTML += "<span class='errorMessage'>Введите пароль в правильном формате, содержащий буквы в верхнем и нижнем регистрах, цифры</span>";
+        }
+    }
+
     //country
     let country = document.getElementById("country");
     if (country.value === "") {
@@ -70,7 +83,7 @@ function checkValidation() {
     } else {
         let isСountry = nameRegExp.test(country.value);
         if (isСountry === false) {
-            document.getElementById("countryError").innerHTML += "<span class='errorMessage'>Название страны не может содержать цифры, символы и точки с запяти</span>";
+            document.getElementById("countryError").innerHTML += "<span class='errorMessage'>Название страны не может содержать цифры, символы и точки с запятой</span>";
         }
     }
 
