@@ -2,10 +2,14 @@ body {
     font-family: 'Montserrat', Times, sans-serif;
 }
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
 .wrapper {
     min-height: 100vh;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
 }
@@ -17,4 +21,237 @@ body {
 
 .content {
     flex: 1 1 auto;
+}
+
+/*хэддер*/
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.piggibank {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.piggibank-svg {
+    grid-area: 1/1/3/2;
+}
+
+/*начало кнопки в хэддере*/
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #63A1FF;
+    outline: 0;
+}
+
+.third {
+    border-color: #63A1FF;
+    color: rgb(1, 1, 1);
+    box-shadow: 0 0 40px 40px #63A1FF inset, 0 0 0 0 #63A1FF;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #63A1FF inset, 0 0 10px 4px #63A1FF;
+}
+
+/*конец кнопки*/
+
+.exchange-rates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+
+}
+
+.exchange-rates-main {
+    grid-area: 1/1/4/2;
+    align-self: center;
+}
+
+/*конец хэддера*/
+
+/*начало карточек*/
+.h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    max-width: 300px;
+    min-height: 250px;
+    background: #63A1FF;
+    padding: 30px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    box-shadow: 0px 2px 18px -4px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+
+.card-img {
+    width: 240px;
+}
+
+
+.card-title {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+}
+
+.card-content {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.card-btn {
+    all: unset;
+    display: block;
+    margin-left: auto;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: 600;
+    transition: all 0.5s;
+    cursor: pointer;
+    letter-spacing: 1.2px;
+}
+
+.card-btn:hover {
+    color: #02b875;
+    background: #FFF;
+}
+
+.card:nth-child(2) .card-btn:hover {
+    color: #4181ee;
+    background: #FFF;
+}
+
+.card:last-child .card-btn:hover {
+    color: #673ab7;
+    background: #FFF;
+}
+
+/*конец карточек*/
+
+/*начало адаптивки*/
+@media (min-width: 420px) and (max-width: 767px) {
+    #exchange-rates {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 420px) {
+
+    body {
+        font-size: 1em;
+    }
+
+    #exchange-rates {
+        display: none;
+    }
+
+    .piggibank {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+    }
+
+    #piggi {
+        display: none;
+    }
+
+    .card {
+        max-width: 90%;
+        min-height: 75px;
+        background: #63A1FF;
+        box-sizing: border-box;
+        color: rgb(0, 0, 0);
+        margin: 3px;
+        box-shadow: 0px 2px 18px -4px rgba(0, 0, 0, 0.75);
+        border-radius: 20px;
+    }
+
+    .card-img {
+        width: 100%;
+    }
+
+
+    .card-title {
+        margin-top: 0;
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    .card-content {
+        font-size: 1em;
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+    }
+
+    .card-btn {
+        all: unset;
+        display: block;
+        margin-left: auto;
+        border: 2px solid rgb(0, 0, 0);
+        padding: 5px 7px;
+        border-radius: 15px;
+        font-size: 10px;
+        font-weight: 600;
+        transition: all 0.5s;
+        cursor: pointer;
+        letter-spacing: 1.2px;
+    }
 }
