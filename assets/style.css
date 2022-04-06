@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', Times, sans-serif;
 }
@@ -17,4 +23,172 @@ body {
 
 .content {
     flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 560px;
+    height: max-content;
+
+    background: #fafafa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+    border-radius: 4px;
+}
+
+.calculator__inner {
+    padding-bottom: 30px;
+    padding-top: 35px;
+}
+
+.calculator__section {
+    padding: 18px 0 14px;
+
+}
+
+.calculator__fields {
+    display: block;
+
+    margin-bottom: 12px;
+
+    width: 350px;
+
+    border-radius: 3px;
+    background: white;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.calculator__header {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-input {
+    display: flex;
+    padding: 14px 30px 14px 18px;
+    width: 100%;
+}
+
+.numper-input__label,
+.numper-input__value,
+.numper-input__value-expenses {
+    width: 50%;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 22px;
+    border: none;
+}
+
+.numper-input__value,
+.numper-input__value-expenses {
+    text-align: right;
+}
+
+.calculator__add-field {
+    margin-bottom: 15px;
+
+    color: #63A1FF;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+.addElement {
+    padding-right: 5px;
+}
+
+span>i {
+    margin-right: 5px;
+}
+
+.calculator__total {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 10px;
+
+    font-size: 16px;
+    line-height: 22px;
+
+    border-top: 1px dashed #ddd;
+    padding-top: 7px;
+}
+
+.range-input {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.calculator__footer {
+    margin: 20px 0 0 0;
+    padding: 0;
+    border-top: 1px solid #ddd;
+}
+
+.calculator__total-result {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    font-size: 16px;
+    line-height: 22px;
+
+    padding-top: 5px;
+}
+
+span.spendPerMonth,
+span.spendPerDay,
+span.savePerYear,
+span.totalSaveMoney {
+    font-weight: bold;
+}
+
+.resultButton {
+    justify-items: flex-end;
+    margin-top: 40px;
+
+    width: 135px;
+    height: 40px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    background-color: #63A1FF;
+    background-color: none;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.resultButton:hover {
+    background-color: #71a8fb;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: flex-end;
 }
