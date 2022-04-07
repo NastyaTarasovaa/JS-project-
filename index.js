@@ -106,7 +106,7 @@ moneyBoxRange.addEventListener("input", e => {
     calculationPrecents();
 
     // Расходы минус доходы:
-    let moneyMonth = raxn - accumulation;
+    let moneyMonth = myMonthMoney - accumulation;
     totalMoneyMonth.innerHTML = moneyMonth;
     console.log(moneyMonth);
 
