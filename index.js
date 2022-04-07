@@ -1,16 +1,51 @@
-let totalIncome = document.getElementById("totalIncome");
+// ДОХОДЫ
 
-// добавление инпутов доходов
+// объявление поля для добавление новых инпутов с доходами
+
 const newElementIncome = document.getElementsByClassName("newElementIncome")[0];
 
-let arr = [];
+// объявление переменных в части "доходы" и "расходы"
+
+let totalIncome = document.getElementById("totalIncome");
+let totalExpenses = document.getElementById("totalExpenses");
+let resultSum = 0;
+let arrInput = [];
+let arrCosts = [];
+let cost1Value = 0;
+let accumulation = 0;
+let totalPrecents = 0;
+const totalMoneyMonth = document.getElementById("spendPerMonth");
+const spendPerDay = document.getElementById("spendPerDay");
+const totalPrecentEl = document.getElementById("total-precents");
+let myMonthMoney = 0;
+
+// добавление value в массив из инпута по умолчанию
+
+function saveIncome1() {
+    let income1value = document.getElementById("income1").value
+    arrInput.push(income1value)
+    console.log(arrInput)
+    totalIncome.innerHTML = income1value;
+};
+
+// Запись расходов
+
+function saveCost1() {
+    let cost1Value = document.getElementById("firstCost").value
+    arrCosts.push(cost1Value)
+    console.log(arrCosts)
+    totalExpenses.innerHTML = cost1Value;
+    myMonthMoney = resultSum - cost1Value;
+};
+
+// добавление новых полей
 
 function addItemIncome() {
     const divParent = document.createElement("div");
     const divChild = document.createElement("div");
     const inputChild = document.createElement("input");
     const inputParent = document.createElement("input");
-    const deleteIcon = document.createElement("i")
+    // const deleteIcon = document.createElement("i");
 
     divParent.className = "calculator__fields";
     divChild.className = "number-input";
@@ -18,50 +53,89 @@ function addItemIncome() {
 
     divChild.appendChild(inputChild);
 
-    console.log(divChild)
-
     inputParent.className = "numper-input__value";
 
     divChild.appendChild(inputParent);
 
-    deleteIcon.className = "fa-solid fa-xmark";
-    deleteIcon.style = `color: #71a8fb;
-    margin-top: 3px;`
-    deleteIcon.addEventListener("click", function(){
-        deleteIcon.style.color = "lightgray";
-        divParent.remove();
-    })
-    divChild.appendChild(deleteIcon);
+    // deleteIcon.className = "fa-solid fa-xmark";
+    // deleteIcon.style = `color: #71a8fb;
+    // margin-top: 3px;`
+
+
+    // divChild.appendChild(deleteIcon);
 
     divParent.appendChild(divChild);
 
     newElementIncome.appendChild(divParent);
 
-    // Добавление данных в массив
+  // Добавление данных в массив
 
     inputParent.onchange = function() {
         let data = inputParent.value; 
-        arr.push(data);
-        console.log(arr);
+        arrInput.push(data);
+        console.log(arrInput);
+        sumOfInputs();
+        totalIncome.innerHTML = resultSum;
 
-        // Сумма данных инпутов
-
-        let sum = 0;
+    // Сумма данных инпутов
 
         function sumOfInputs() {
-            for (i = 0; i < arr.length; i++) {
-            sum += +arr[i];
+            resultSum = arrInput.reduce(function(sum, elem) {
+                return +sum + +elem;
+            }, 0);
+            console.log(resultSum);
             }
-            return sum;
-            }
-            sumOfInputs();
-            totalIncome.innerHTML = sum;
+
+    // Удаление строки + элемента массива
+
+            // deleteIcon.addEventListener("click", function(){
+            //     arrInput.splice(arrInput.findIndex(function(e) { return e === inputParent.value}), 1);
+            //     console.log(arrInput);
+            //     divParent.remove();
+            //     resultSum = +" ";
+            //     totalIncome.innerHTML = sumOfInputs();
+            //     })
         }
-
-
 }
 
+// добавление значений range-input 
+const moneyBoxRange = document.getElementById("money-box-range");
+moneyBoxRange.addEventListener("input", e => {
+    totalPrecents = e.target.value;
+    totalPrecentEl.innerHTML = totalPrecents;
+    calculationPrecents();
 
+    // Расходы минус доходы:
+    let moneyMonth = raxn - accumulation;
+    totalMoneyMonth.innerHTML = moneyMonth;
+    console.log(moneyMonth);
+
+    // Доступно в день:
+    spendPerDay.innerHTML = (moneyMonth / 30).toFixed();
+})
+
+let MoneyBox = document.getElementById("totalSaveMoney");
+
+const calculationPrecents = () => {
+    accumulation = ((resultSum * totalPrecents) / 100).toFixed();
+    MoneyBox.innerHTML = accumulation;
+}
+
+// Очищение добавленных полей 
+
+function deleteAll() {
+    newElementIncome.remove();
+    spendPerDay.innerHTML = 0;
+    totalPrecentEl.innerHTML = 0;
+    MoneyBox.innerHTML = 0;
+    arrInput.length = 0;
+    arrCosts.length = 0;
+    let newIncome = document.getElementById("income1").value;
+    let newCost = document.getElementById("firstCost").value;
+    totalMoneyMonth.innerHTML = +newIncome - +newCost;
+}
+
+// РАСХОДЫ
 
 // добавление инпутов расходов
 
@@ -101,6 +175,5 @@ function addItemCosts() {
 
     newElementCosts.appendChild(divParent);
 }
-
 
 

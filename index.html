@@ -31,7 +31,7 @@
                                     <div class="calculator__fields">
                                         <div class="number-input">
                                             <input type="text" class="numper-input__label" placeholder="Доход 1">
-                                            <input type="number" class="numper-input__value" placeholder="0">
+                                            <input type="number" onchange="saveIncome1()" class="numper-input__value" id="income1" placeholder="0">
                                         </div>
                                     </div>
                                     <div class="newElementIncome"></div>
@@ -49,17 +49,13 @@
                                     <div class="calculator__header">Обязательные расходы</div>
                                     <div class="calculator__fields">
                                         <div class="number-input">
-                                            <input type="text" class="numper-input__label" placeholder="Расход 1">
-                                            <input type="number" class="numper-input__value-expenses" placeholder="0">
+                                            <input type="text" class="numper-input__label" placeholder="Сумма расходов">
+                                            <input type="number" class="numper-input__value-expenses" id="firstCost" placeholder="0" onchange="saveCost1()">
                                         </div>
-                                    </div>
-                                    <div class="newElementCosts"></div>
-                                    <div class="calculator__add-field">
-                                        <span id="takeMoney" onclick="addItemCosts()"><i class="fa-solid fa-plus"></i>Добавить строку</span>
                                     </div>
                                     <div class="calculator__total">
                                         <span>Итого</span>
-                                        <span class="totalExpenses">0</span>
+                                        <span id="totalExpenses">0</span>
                                     </div>
                                 </div>
                                 <div class="calculator__section">
@@ -78,14 +74,14 @@
                                                 </div>
                                                 <div class="calculator__total-result">
                                                     <span>Остаток в месяц</span>
-                                                    <span id="spendPerMonth">0</span>
+                                                    <span id="spendPerMonth" onfocus="totalMonth()">0</span>
                                                 </div>
                                                 <div class="calculator__total-result">
                                                     <span>Доступно в день</span>
                                                     <span id="spendPerDay">0</span>
                                                 </div>
                                                 <div class="btnContainer">
-                                                    <input type="button" class="resultButton" value="СОХРАНИТЬ">
+                                                    <input type="button" class="resultButton" onclick="deleteAll()" value="ОЧИСТИТЬ">
                                                 </div>
                                             </div>
                                         </div>
