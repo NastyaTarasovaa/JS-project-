@@ -77,15 +77,6 @@ function addItemIncome() {
         sumOfInputs();
         totalIncome.innerHTML = resultSum;
 
-    // Сумма данных инпутов
-
-        function sumOfInputs() {
-            resultSum = arrInput.reduce(function(sum, elem) {
-                return +sum + +elem;
-            }, 0);
-            console.log(resultSum);
-            }
-
     // Удаление строки + элемента массива
 
             // deleteIcon.addEventListener("click", function(){
@@ -96,6 +87,15 @@ function addItemIncome() {
             //     totalIncome.innerHTML = sumOfInputs();
             //     })
         }
+
+    // Сумма данных инпутов
+
+        function sumOfInputs() {
+            resultSum = arrInput.reduce(function(sum, elem) {
+                    return +sum + +elem;
+            });
+            console.log(resultSum)
+            } 
 }
 
 // добавление значений range-input 
@@ -112,6 +112,36 @@ moneyBoxRange.addEventListener("input", e => {
 
     // Доступно в день:
     spendPerDay.innerHTML = (moneyMonth / 30).toFixed();
+
+    class Calculator {
+        constructor (income, costs, totalSaveMoney, moneyPerMonth, moneyPerDay) {
+            this.income = income;
+            this.costs = costs;
+            this.totalSaveMoney = totalSaveMoney;
+            this.moneyPerMonth = moneyPerMonth;
+            this.moneyPerDay = moneyPerDay;
+        }
+    }
+    
+    let result = new Calculator (arrInput.join(", "), arrCosts.join(" "),totalPrecents, moneyMonth, spendPerDay.innerHTML);
+    console.log(result);
+
+    localStorage.setItem("result", JSON.stringify(result));
+
+    function readResult() {
+        const resultJSON = localStorage.getItem("result")
+    
+        if (resultJSON === null) {
+            return undefined
+        }
+        try {
+            return JSON.parse(resultJSON)
+        } catch (e) {
+            localStorage.removeItem("result")
+            return undefined
+        }
+    }
+    readResult();
 })
 
 let MoneyBox = document.getElementById("totalSaveMoney");
@@ -177,3 +207,16 @@ function addItemCosts() {
 }
 
 
+// КЛАСС
+class Calculator {
+    constructor (income, costs, totalSaveMoney, moneyPerMonth, moneyPerDay) {
+        this.income = income;
+        this.costs = costs;
+        this.totalSaveMoney = totalSaveMoney;
+        this.moneyPerMonth = moneyPerMonth;
+        this.moneyPerDay = moneyPerDay;
+    }
+}
+
+let result = new Calculator (arrInput.join(", "), arrCosts.join(" "), MoneyBox.innerHTML, myMonthMoney, spendPerDay.innerHTML);
+console.log(result);
