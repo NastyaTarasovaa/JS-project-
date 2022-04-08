@@ -12,6 +12,7 @@ let resultSum = 0;
 let arrInput = [];
 let arrCosts = [];
 let cost1Value = 0;
+let income1value = 0;
 let accumulation = 0;
 let totalPrecents = 0;
 const totalMoneyMonth = document.getElementById("spendPerMonth");
@@ -35,7 +36,12 @@ function saveCost1() {
     arrCosts.push(cost1Value)
     console.log(arrCosts)
     totalExpenses.innerHTML = cost1Value;
-    myMonthMoney = resultSum - cost1Value;
+
+    if(resultSum === 0) {
+        myMonthMoney = (document.getElementById("income1").value) - cost1Value;
+    } else {
+        myMonthMoney = resultSum - cost1Value;
+    } return myMonthMoney;
 };
 
 // добавление новых полей
@@ -87,16 +93,16 @@ function addItemIncome() {
             //     totalIncome.innerHTML = sumOfInputs();
             //     })
         }
-
-    // Сумма данных инпутов
-
-        function sumOfInputs() {
-            resultSum = arrInput.reduce(function(sum, elem) {
-                    return +sum + +elem;
-            });
-            console.log(resultSum)
-            } 
 }
+
+// Сумма данных инпутов
+
+function sumOfInputs() {
+    resultSum = arrInput.reduce(function(sum, elem) {
+            return +sum + +elem;
+    });
+    console.log(resultSum)
+    } 
 
 // добавление значений range-input 
 const moneyBoxRange = document.getElementById("money-box-range");
@@ -147,7 +153,11 @@ moneyBoxRange.addEventListener("input", e => {
 let MoneyBox = document.getElementById("totalSaveMoney");
 
 const calculationPrecents = () => {
-    accumulation = ((resultSum * totalPrecents) / 100).toFixed();
+    if(resultSum === 0) {
+        accumulation = ((document.getElementById("income1").value) * totalPrecents / 100).toFixed()
+    } else {
+        accumulation = ((resultSum * totalPrecents) / 100).toFixed();
+    }
     MoneyBox.innerHTML = accumulation;
 }
 
@@ -209,14 +219,13 @@ function addItemCosts() {
 
 // КЛАСС
 class Calculator {
-    constructor (income, costs, totalSaveMoney, moneyPerMonth, moneyPerDay) {
+    constructor (income, costs, moneyPerMonth, moneyPerDay) {
         this.income = income;
         this.costs = costs;
-        this.totalSaveMoney = totalSaveMoney;
         this.moneyPerMonth = moneyPerMonth;
         this.moneyPerDay = moneyPerDay;
     }
 }
 
-let result = new Calculator (arrInput.join(", "), arrCosts.join(" "), MoneyBox.innerHTML, myMonthMoney, spendPerDay.innerHTML);
+let result = new Calculator (arrInput.join(", "), arrCosts.join(" "), myMonthMoney, spendPerDay.innerHTML);
 console.log(result);
