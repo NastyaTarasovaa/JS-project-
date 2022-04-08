@@ -171,6 +171,7 @@ function deleteAll() {
     arrInput.length = 0;
     arrCosts.length = 0;
     let newIncome = document.getElementById("income1").value;
+    totalIncome.innerHTML = newIncome;
     let newCost = document.getElementById("firstCost").value;
     totalMoneyMonth.innerHTML = +newIncome - +newCost;
 }
