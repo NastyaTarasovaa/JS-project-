@@ -5,7 +5,6 @@ body {
 .wrapper {
     min-height: 100vh;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
 }
@@ -52,8 +51,28 @@ body {
 .Button_try {
     padding-top: 5%;
     margin-left: 35%;
+
+}
+
+.Button_try button {
+    background-color: #66a4fc;
+    border-radius: 10px;
 }
 
 .Features {
     margin-left: 35%;
+}
+
+@media screen and (max-width: 419px) {
+    .Project-name {
+        margin-left: 0px;
+    }
+
+    .Button_try {
+        margin-left: 0px;
+    }
+
+    .Features {
+        margin-left: 0px;
+    }
 }
