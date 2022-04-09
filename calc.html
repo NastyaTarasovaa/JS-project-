@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/normalize_calc.css">
+    <link rel="stylesheet" href="assets/calc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <header>
+            <div class="content-container">
+                <h2>Хедер</h2>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="body"> 
+                <div class='content-container'>
+                    <div class="calculator-wrapper">
+                        <section class="calculator">
+                            <div class="calculator__inner">
+                                <div class="calculator__section">
+                                    <div class="calculator__header">Доходы</div>
+                                    <div class="calculator__fields">
+                                        <div class="number-input">
+                                            <input type="text" class="numper-input__label" placeholder="Доход 1">
+                                            <input type="number" onchange="saveIncome1()" class="numper-input__value" id="income1" placeholder="0">
+                                        </div>
+                                    </div>
+                                    <div class="newElementIncome"></div>
+
+                                    <div class="calculator__add-field">
+                                        <span id="addMoney" onclick="addItemIncome()"><i class="fa-solid fa-plus"></i>Добавить строку</span>
+                                    </div>
+                                    <div class="calculator__total">
+                                        <span>Итого</span>
+                                        <span id="totalIncome">0</span>
+                                    </div>
+                                </div>
+
+                                <div class="calculator__section">
+                                    <div class="calculator__header">Обязательные расходы</div>
+                                    <div class="calculator__fields">
+                                        <div class="number-input">
+                                            <input type="text" class="numper-input__label" placeholder="Сумма расходов">
+                                            <input type="number" class="numper-input__value-expenses" id="firstCost" placeholder="0" onchange="saveCost1()">
+                                        </div>
+                                    </div>
+                                    <div class="calculator__total">
+                                        <span>Итого</span>
+                                        <span id="totalExpenses">0</span>
+                                    </div>
+                                </div>
+                                <div class="calculator__section">
+                                    <h5>Копилка: откладываю в месяц</h5>
+                                    <div class="range-input">
+                                        <input type="range" min="0" max="100" value="0" id="money-box-range">
+                                    </div>
+                                    <div><span id="total-precents">0</span>%</div>
+                                    <div class="calculator__footer">
+                                        <div class="calculator__section">
+                                            <div class="calculator__header">Мой бюджет</div>
+                                            <div class="calculator__result">
+                                                <div class="calculator__total-result">
+                                                    <span>Мои сбережения за месяц</span>
+                                                    <span id="totalSaveMoney">0</span>
+                                                </div>
+                                                <div class="calculator__total-result">
+                                                    <span>Остаток в месяц</span>
+                                                    <span id="spendPerMonth" onfocus="totalMonth()">0</span>
+                                                </div>
+                                                <div class="calculator__total-result">
+                                                    <span>Доступно в день</span>
+                                                    <span id="spendPerDay">0</span>
+                                                </div>
+                                                <div class="btnContainer">
+                                                    <input type="button" class="resultButton" onclick="deleteAll()" value="ОЧИСТИТЬ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="content-container">
+                <div class="footer__row">
+                    <div class="footer__text">Тут должен быть футер</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="calc.js"></script>
+</body>
+
+</html>
