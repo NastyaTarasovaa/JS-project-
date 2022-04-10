@@ -89,6 +89,7 @@ function checkValidation() {
 
 };
 
+//Local Storage 
 function store () {
 var inputName= document.getElementById("name");
 var inputSurname= document.getElementById("surname");
