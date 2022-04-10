@@ -45,34 +45,41 @@ body {
 .Project-name {
     font-style: bold;
     padding-bottom: 1%;
-    margin-left: 35%;
+    margin-left: 30%;
+    font-size: 115%;
 }
 
 .Button_try {
     padding-top: 5%;
-    margin-left: 35%;
+    margin-left: 30%;
 
 }
 
 .Button_try button {
     background-color: #66a4fc;
     border-radius: 10px;
+    font-size: 115%;
 }
 
 .Features {
-    margin-left: 35%;
+    margin-left: 30%;
+    font-size: 115%;
 }
 
 @media screen and (max-width: 419px) {
     .Project-name {
         margin-left: 0px;
+        font-size: 105%;
     }
 
     .Button_try {
         margin-left: 0px;
+        font-size: 105%;
+
     }
 
     .Features {
         margin-left: 0px;
+        font-size: 105%;
     }
 }
