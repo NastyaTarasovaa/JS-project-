@@ -178,16 +178,7 @@ const calculationPrecents = () => {
 // Очищение добавленных полей 
 
 function deleteAll() {
-    newElementIncome.remove();
-    spendPerDay.innerHTML = 0;
-    totalPrecentEl.innerHTML = 0;
-    MoneyBox.innerHTML = 0;
-    arrInput.length = 0;
-    arrCosts.length = 0;
-    let newIncome = document.getElementById("income1").value;
-    totalIncome.innerHTML = newIncome;
-    let newCost = document.getElementById("firstCost").value;
-    totalMoneyMonth.innerHTML = +newIncome - +newCost;
+    location.reload();
 }
 
 // РАСХОДЫ
