@@ -1,5 +1,13 @@
 // ДОХОДЫ
 
+document.addEventListener("DOMContentLoaded", function(event) {
+    let data = localStorage.getItem("balancePerMonth");
+    if(data !== null) {
+        document.getElementById('header-totalSaveMoney').innerHTML = data;
+    }
+});
+
+
 // объявление поля для добавление новых инпутов с доходами
 
 const newElementIncome = document.getElementsByClassName("newElementIncome")[0];
@@ -136,9 +144,10 @@ moneyBoxRange.addEventListener("input", e => {
     console.log(result);
 
     localStorage.setItem("result", JSON.stringify(result));
+    localStorage.setItem("balancePerMonth", moneyMonth);
 
     function readResult() {
-        const resultJSON = localStorage.getItem("result")
+        let resultJSON = localStorage.getItem("result")
 
         if (resultJSON === null) {
             return undefined
@@ -152,6 +161,7 @@ moneyBoxRange.addEventListener("input", e => {
     }
     readResult();
 })
+
 
 let MoneyBox = document.getElementById("totalSaveMoney");
 

@@ -17,6 +17,7 @@ a {
 .form {
     width: 500px;
     background: #63A1FF;
+    color: white;
     border-radius: 20px;
     display: flex;
     justify-content: center;

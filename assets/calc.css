@@ -13,6 +13,7 @@ body {
     font-family: 'Montserrat', Times, sans-serif;
 }
 
+
 .wrapper {
     min-height: 100vh;
     overflow: hidden;
@@ -40,6 +41,8 @@ body {
 .calculator-wrapper {
     display: flex;
     flex-direction: column;
+
+    margin-top: 50px;
 
     align-items: center;
 
