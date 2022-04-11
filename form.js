@@ -90,18 +90,12 @@ function checkValidation() {
 };
 
 //Local Storage 
-function store () {
-var inputName= document.getElementById("name");
-var inputSurname= document.getElementById("surname");
-var inputAge= document.getElementById("age");
-localStorage.setItem("name", inputName.value);
-localStorage.setItem("surname", inputSurname.value);
-localStorage.setItem("age", inputAge.value);
+function store() {
+    var inputName = document.getElementById("name");
+    var inputSurname = document.getElementById("surname");
+    var inputAge = document.getElementById("age");
+    localStorage.setItem("name", inputName.value);
+    localStorage.setItem("surname", inputSurname.value);
+    localStorage.setItem("age", inputAge.value);
 
 }
-
-
-
-
-
-

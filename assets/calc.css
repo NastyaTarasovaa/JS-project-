@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
 body {
     font-family: 'Montserrat', Times, sans-serif;
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/normalize.css">
+    <link rel="stylesheet" href="./assets/normalize_calc.css">
     <link rel="stylesheet" href="./assets/styleadvice.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto+Slab:wght@300&family=Roboto:wght@300;400;700&display=swap"
@@ -20,11 +20,7 @@
         <header class="header-container">
             <div class="header-items piggibank"><img class="piggibank-svg"
                     src="./assets/images/piggy-bank-coin-svgrepo-com.svg" height=50px id="piggi">
-                <div class="elem">Остаток:</div>
-                <div>+10 000</div>
             </div>
-
-            <a href="./advice.html" class="header-items">Финансовые заметки</a>
 
             <div class="header-items exchange-rates" id="exchange-rates">
                 <div class="exchange-rates-main">Курсы валют</div>
@@ -32,7 +28,7 @@
                 <div class="exchange-rates-item">EUR <span id="EUR"></span></div>
                 <div class="exchange-rates-item">CNY <span id="CNY"></span></div>
             </div>
-            <a href="calc.html"><button class="header-items btn third">Личный кабинет</button></a>
+            <a href="calc.html"><button class="header-items btn third">Калькулятор</button></a>
         </header>
 
 
@@ -41,7 +37,7 @@
             <div class="body">
                 <div class='content-container'>
                     <div class="container">
-                        <h1 class="h1">Финансовые заметки</h1>
+                        <h1 class="h1" id="hello"></h1>
                         <div class="card-wrapper">
                             <div class="card">
                                 <img class="card-img" src="./assets/images/Finance1-1-400x250.png" alt="монетки" />
@@ -120,8 +116,11 @@
                     document.getElementById('CNY').innerHTML = (rates.rates.RUB / rates.rates.CNY).toFixed(3);
                 })
                 .catch(err => console.log(err));
-        }
+        };
+        let name = localStorage.getItem('name');
+        document.getElementById('hello').innerHTML = `Добро пожаловать, ${name}!`;
     </script>
+    <script src="./form.js"></script>
 </body>
 
 </html>

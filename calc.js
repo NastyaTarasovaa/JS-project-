@@ -37,11 +37,12 @@ function saveCost1() {
     console.log(arrCosts)
     totalExpenses.innerHTML = cost1Value;
 
-    if(resultSum === 0) {
+    if (resultSum === 0) {
         myMonthMoney = (document.getElementById("income1").value) - cost1Value;
     } else {
         myMonthMoney = resultSum - cost1Value;
-    } return myMonthMoney;
+    }
+    return myMonthMoney;
 };
 
 // добавление новых полей
@@ -74,35 +75,35 @@ function addItemIncome() {
 
     newElementIncome.appendChild(divParent);
 
-  // Добавление данных в массив
+    // Добавление данных в массив
 
-    inputParent.onchange = function() {
-        let data = inputParent.value; 
+    inputParent.onchange = function () {
+        let data = inputParent.value;
         arrInput.push(data);
         console.log(arrInput);
         sumOfInputs();
         totalIncome.innerHTML = resultSum;
 
-    // Удаление строки + элемента массива
+        // Удаление строки + элемента массива
 
-            // deleteIcon.addEventListener("click", function(){
-            //     arrInput.splice(arrInput.findIndex(function(e) { return e === inputParent.value}), 1);
-            //     console.log(arrInput);
-            //     divParent.remove();
-            //     resultSum = +" ";
-            //     totalIncome.innerHTML = sumOfInputs();
-            //     })
-        }
+        // deleteIcon.addEventListener("click", function(){
+        //     arrInput.splice(arrInput.findIndex(function(e) { return e === inputParent.value}), 1);
+        //     console.log(arrInput);
+        //     divParent.remove();
+        //     resultSum = +" ";
+        //     totalIncome.innerHTML = sumOfInputs();
+        //     })
+    }
 }
 
 // Сумма данных инпутов
 
 function sumOfInputs() {
-    resultSum = arrInput.reduce(function(sum, elem) {
-            return +sum + +elem;
+    resultSum = arrInput.reduce(function (sum, elem) {
+        return +sum + +elem;
     });
     console.log(resultSum)
-    } 
+}
 
 // добавление значений range-input 
 const moneyBoxRange = document.getElementById("money-box-range");
@@ -119,8 +120,10 @@ moneyBoxRange.addEventListener("input", e => {
     // Доступно в день:
     spendPerDay.innerHTML = (moneyMonth / 30).toFixed();
 
+    document.getElementById('header-totalSaveMoney').innerHTML = spendPerMonth.innerHTML;
+
     class Calculator {
-        constructor (income, costs, totalSaveMoney, moneyPerMonth, moneyPerDay) {
+        constructor(income, costs, totalSaveMoney, moneyPerMonth, moneyPerDay) {
             this.income = income;
             this.costs = costs;
             this.totalSaveMoney = totalSaveMoney;
@@ -128,15 +131,15 @@ moneyBoxRange.addEventListener("input", e => {
             this.moneyPerDay = moneyPerDay;
         }
     }
-    
-    let result = new Calculator (arrInput.join(", "), arrCosts.join(" "),totalPrecents, moneyMonth, spendPerDay.innerHTML);
+
+    let result = new Calculator(arrInput.join(", "), arrCosts.join(" "), totalPrecents, moneyMonth, spendPerDay.innerHTML);
     console.log(result);
 
     localStorage.setItem("result", JSON.stringify(result));
 
     function readResult() {
         const resultJSON = localStorage.getItem("result")
-    
+
         if (resultJSON === null) {
             return undefined
         }
@@ -153,13 +156,14 @@ moneyBoxRange.addEventListener("input", e => {
 let MoneyBox = document.getElementById("totalSaveMoney");
 
 const calculationPrecents = () => {
-    if(resultSum === 0) {
+    if (resultSum === 0) {
         accumulation = ((document.getElementById("income1").value) * totalPrecents / 100).toFixed()
     } else {
         accumulation = ((resultSum * totalPrecents) / 100).toFixed();
     }
     MoneyBox.innerHTML = accumulation;
-}
+};
+
 
 // Очищение добавленных полей 
 
@@ -206,11 +210,11 @@ function addItemCosts() {
     deleteIcon.className = "fa-solid fa-xmark";
     deleteIcon.style = `color: #71a8fb;
     margin-top: 3px;`
-    deleteIcon.addEventListener("click", function(){
+    deleteIcon.addEventListener("click", function () {
         deleteIcon.style.color = "lightgray";
         divParent.remove();
     })
-    divChild.appendChild( deleteIcon);
+    divChild.appendChild(deleteIcon);
 
     divParent.appendChild(divChild);
 
@@ -220,7 +224,7 @@ function addItemCosts() {
 
 // КЛАСС
 class Calculator {
-    constructor (income, costs, moneyPerMonth, moneyPerDay) {
+    constructor(income, costs, moneyPerMonth, moneyPerDay) {
         this.income = income;
         this.costs = costs;
         this.moneyPerMonth = moneyPerMonth;
@@ -228,5 +232,5 @@ class Calculator {
     }
 }
 
-let result = new Calculator (arrInput.join(", "), arrCosts.join(" "), myMonthMoney, spendPerDay.innerHTML);
+let result = new Calculator(arrInput.join(", "), arrCosts.join(" "), myMonthMoney, spendPerDay.innerHTML);
 console.log(result);

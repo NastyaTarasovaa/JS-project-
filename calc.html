@@ -22,7 +22,7 @@
             <div class="header-items piggibank"><img class="piggibank-svg"
                     src="./assets/images/piggy-bank-coin-svgrepo-com.svg" height=50px id="piggi">
                 <div class="elem">Остаток:</div>
-                <div>+10 000</div>
+                <div id="header-totalSaveMoney"></div>
             </div>
             <div class="header-items exchange-rates" id="exchange-rates">
                 <div class="exchange-rates-main">Курсы валют</div>
@@ -30,7 +30,7 @@
                 <div class="exchange-rates-item">EUR <span id="EUR"></span></div>
                 <div class="exchange-rates-item">CNY <span id="CNY"></span></div>
             </div>
-            <a href="/advice.html"><button class="header-items btn third">Назад</button></a>
+            <a href="./advice.html"><button class="header-items btn third">Назад</button></a>
 
         </header>
 
@@ -137,7 +137,7 @@
                     document.getElementById('CNY').innerHTML = (rates.rates.RUB / rates.rates.CNY).toFixed(3);
                 })
                 .catch(err => console.log(err));
-        }
+        };
     </script>
 </body>
 
